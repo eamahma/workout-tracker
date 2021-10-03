@@ -40,4 +40,34 @@ router.get('/stats', (req, res) => {
     res.sendFile(path.join(__dirname,'../public/stats.html'))
 })
 
+router.get('/exercise', (req, res) => {
+    res.sendFile(path.join(__dirname,'../public/exercise.html'))
+})
+
+router.put('/api/workouts/:id', async (req, res) => {
+    try {
+        let newExercise = await Workout.findByIdAndUpdate(
+            req.params.id,
+            {
+                $push: {
+                    exercises: req.body
+                }
+            },
+            {new: true}
+        )
+        res.json(newExercise)
+    } catch(err) {
+        res.status(500).json(err.message)
+    }
+})
+
+router.post('/api/workouts', async (req, res) => {
+    try {
+        let createWorkout = await Workout.create({})
+        res.json(createWorkout)
+    } catch(err) {
+        res.status(500).json(err.message)
+    }
+})
+
 module.exports = router;
