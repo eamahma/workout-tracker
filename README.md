@@ -25,6 +25,12 @@ Application is under MIT license and free to share the link.
     Appliction licensed under The MIT License license. for further information refer to following link:
 https://opensource.org/licenses/MIT
 
+## Mock-Up
+
+The following images show the web application's appearance and functionality:
+
+Workout tracker will show the progress.
+![Workout tracker will show the progress.](/assets/protected-castle-13240.herokuapp.com_stats.png)
 
 ## Test
 The application will be invoked by using the following command:
